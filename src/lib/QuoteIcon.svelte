@@ -18,7 +18,7 @@
     /* margin-left: -20px; */
     /* margin-top: 40px; */
 }
-@media only screen and (min-width: 0px) and (max-width: 400px) { 
+@media(max-width: 720px){
     * {
         display: none;
     }

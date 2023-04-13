@@ -49,6 +49,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sanity/client": "^5.4.2",
+		"@sanity/image-url": "^1.0.2",
 		"date-fns": "^2.29.3"
 	}
 }

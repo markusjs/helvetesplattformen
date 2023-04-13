@@ -3,10 +3,10 @@
     import QuoteIcon from '$lib/QuoteIcon.svelte';
 </script>
 <div class="title-and-quote">
-    <h1>Helvetesplattformen</h1>
+    <h1>Helvetes&shy;plattformen</h1>
     <div class="quote-wrap" style="--text-color: {textColor}">
         <div>
-            <QuoteIcon class="quote-icon"></QuoteIcon>
+            <QuoteIcon></QuoteIcon>
         </div>
         <div class="quote-box">
             <a href="https://www.nrk.no/trondelag/helseplattformen-skaper-problemer-pa-legevakta-i-trondheim_-_-vi-kaller-det-for-_helvetesplattformen-1.15993007">
@@ -50,7 +50,7 @@
         font-style: italic;
         font-weight: 500;
     }
-    @media only screen and (min-width: 0px) and (max-width: 400px) { 
+    @media(max-width:720px){
         h1 {
             font-size: 2rem;
         }
@@ -67,8 +67,4 @@
         margin-bottom: 16px;
         align-items: normal;
     }
-
-
-
-
 </style>

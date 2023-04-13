@@ -4,20 +4,43 @@
     let textColor = '#003B49';
     import PostDate from '$lib/PostDate.svelte';
     export let posts
-    // let sortedArray = posts.sort((a, b) => a.publishedAt - b.publishedAt);
-    let array = [];
-    posts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-    console.log(array)
+    // JSON.stringify({ posts: "sample", bar: "sample" }, null, 4)
+
 </script>
+<!-- <h2>2023</h2> -->
 <h2>Alle nyheter</h2>
+
 <div class="wrapper" style="--background-color: {backgroundColor}; --text-color: {textColor}">
     {#each posts as post}
+        {#if post.publishedAt.startsWith('2023')}
         <a href={post.url} class="card">
             <PostDate {post}></PostDate>
-            <h3>{post.title}</h3>
+            {#if post.mainImage}
+                <div class="img-wrap">
+                    <img src={post.mainImage.asset.url} alt="hovedbilde">
+                </div>
+            {/if}
+                <h3>{post.title}</h3>
+                {#if post.author.name && post.author.name.lenght}
+                    <p>{post.author.name}</p>
+                {/if}
+            <!-- </div> -->
+            <!-- <img src={post.mainImage} alt="hovedbilde"> -->
+            <!-- {post.mainImage} -->
         </a>
+        {:else if post.publishedAt.startsWith('2022')}
+            <a href={post.url} class="card">
+                <PostDate {post}></PostDate>
+                {#if post.mainImage}
+                <div class="img-wrap">
+                    <img src={post.mainImage.asset.url} alt="hovedbilde">
+                </div>
+            {/if}
+                <h3>{post.title}</h3>
+            </a>
+        {/if}
     {/each}
-</div>
+    </div>
 
 <style lang="scss">
     h2 {
@@ -32,21 +55,40 @@
         flex-wrap: wrap;
         gap: 1rem;
         background: var(--background-color);
+        // background: red;
         .card {
             color: var(--text-color);
             background: white;
             flex: 400px;
             padding: 24px;
             border-radius: 7px;
-
+            width: 100%;
+            box-sizing: border-box;
             &:focus h3, &:hover h3 {
                 text-decoration: underline;
                 font-style: italic;
             }
             h3 {
                 font-size: 1.5rem;
-                font-weight: 100;
+                font-weight: 300;
+                margin-bottom: 0;
+                margin-top: 16px;
             }
+        }
+        position: relative; 
+        .img-wrap {
+            padding-top: 32px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding-bottom: 32px;
+            height: 250px;
+            align-items: center;
+
+        }
+        img {
+            height: auto;
+            border-radius: 7.5px 7.5px 0px 0px;           
         }
         }
   </style>

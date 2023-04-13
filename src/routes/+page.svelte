@@ -4,27 +4,33 @@
     let backgroundColor = '#ECEFF7';
     let textColor = '#003B49';
     import TitleAndQuote from '$lib/TitleAndQuote.svelte'
+    import Header from '$lib/Header.svelte'
 	import PostList from '$lib/PostList.svelte'
     // export let author;
     export let data;
 </script>
-
+<svelte:head>
+    <title>Helvetesplattformen</title>
+</svelte:head>
 <main style="--background-color: {backgroundColor}; --text-color: {textColor}">
-    <TitleAndQuote/>
-    <PostList posts={data.posts} authors={data.authors}></PostList>
-    <div class="tips">
-        <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips om nyhetssak!</a>
+    <div class="content">
+        <PostList posts={data.posts}></PostList>
+        <div class="tips">
+            <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips om nyhetssak!</a>
+        </div>
     </div>
 </main>
 <style>
     * {
         color: var(--text-color);
     }
-    main {
-        max-width: 1200px;
+    .content {
+        max-width: 1281px;
         margin: auto;
-        padding: 16px 16px;
+        /* padding: 0; */
+        /* background: red; */
     }
+
     .tips {
         margin: 24px 0;
     }
