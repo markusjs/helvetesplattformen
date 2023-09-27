@@ -3,44 +3,48 @@
     let backgroundColor = '#ECEFF7';
     let textColor = '#003B49';
     import PostDate from '$lib/PostDate.svelte';
-	import { each } from 'svelte/internal';
     export let posts
     // JSON.stringify({ posts: "sample", bar: "sample" }, null, 4)
 
 </script>
 <!-- <h2>2023</h2> -->
 <h2>Alle nyheter</h2>
+
 <div class="wrapper" style="--background-color: {backgroundColor}; --text-color: {textColor}">
-    {#each posts as post, i}
-        <a href={post.url} class="card">
-            <!-- {post.categories} -->
-            <PostDate {post}></PostDate>
+    {#each posts as post}
+        {#if post.publishedAt.startsWith('2023')}
+            <a href={post.url} class="card">
+                <PostDate {post}></PostDate>
                 {#if post.mainImage}
                     <div class="img-wrap">
                         <img src={post.mainImage.asset.url} alt="hovedbilde">
                     </div>
                 {/if}
-        
-        <h3>{post.title}
-        
-        </h3>
-        {#if post.categories != null}
-                {#if post.categories[0].title == "Pluss-sak"}
-                <h4 class="plus">Krever abonnement</h4>
-                {/if}
+                    <h3>{post.title}</h3>
+                    {#if post.author.name && post.author.name.lenght}
+                        <p>{post.author.name}</p>
+                    {/if}
+                <!-- </div> -->
+                <!-- <img src={post.mainImage} alt="hovedbilde"> -->
+                <!-- {post.mainImage} -->
+            </a>
+        {:else if post.publishedAt.startsWith('2022')}
+            <a href={post.url} class="card">
+                <PostDate {post}></PostDate>
+                {#if post.mainImage}
+                <div class="img-wrap">
+                    <img src={post.mainImage.asset.url} alt="hovedbilde">
+                </div>
             {/if}
-        {#if post.author.name && post.author.name.lenght}
-            <p>{post.author.name}</p>
+                <h3>{post.title}</h3>
+            </a>
         {/if}
-</a>
-
-{/each}
+    {/each}
 </div>
 
+
+
 <style lang="scss">
-    .plus {
-        margin-bottom: 0;
-    }
     h2 {
         margin-top: 0;
     }

@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import { format, isToday, isYesterday } from 'date-fns'
     export let post
     // export let author
@@ -18,7 +20,22 @@
         {:else}
             {formattedDate}
         {/if}
-        <div>{post.source}</div>
+        {#if post.categories}
+            {#if post.categories[0].title == "Pluss-sak"}
+                <div>
+                    {post.source}
+                    +
+                </div>
+            {:else}
+                <div>
+                    {post.source}
+                </div>
+            {/if}
+            {:else}
+                <div>
+                    {post.source}
+                </div>
+        {/if}
     </div>
   </div>
   <style>

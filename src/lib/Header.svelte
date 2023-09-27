@@ -2,6 +2,8 @@
     let textColor = '#003B49';
     import Hamburger from '$lib/Hamburger.svelte';
     import Menu from '$lib/Menu.svelte';
+    import Modal from '$lib/Modal.svelte';
+    let showModal = false;
 </script>
 <header>
     <div class="title">
@@ -12,7 +14,33 @@
     <Hamburger>
         <Menu/>
     </Hamburger> -->
-    <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips!</a>
+    <!-- <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips!</a> -->
+    <!-- <button on:click={() => (showModal = true)}> show modal </button> -->
+            
+    <Modal bind:showModal>
+        <h2 slot="header">
+            modal
+            <small><em>adjective</em> mod·al \ˈmō-dəl\</small>
+        </h2>
+    
+        <ol class="definition-list">
+            <li>of or relating to modality in logic</li>
+            <li>
+                containing provisions as to the mode of procedure or the manner of taking effect —used of a
+                contract or legacy
+            </li>
+            <li>of or relating to a musical mode</li>
+            <li>of or relating to structure as opposed to substance</li>
+            <li>
+                of, relating to, or constituting a grammatical form or category characteristically indicating
+                predication
+            </li>
+            <li>of or relating to a statistical mode</li>
+        </ol>
+        <label for="">Tittel</label>
+        <input type="text" id="title">
+        <button type="submit"></button>
+    </Modal>
 </header>
 
 <style lang="scss">

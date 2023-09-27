@@ -20,7 +20,7 @@ const client = createClient({
 });
 export async function load({ params }) {
   const data = await client.fetch(`*[_type == "artikkel"]{
-    title, source, url, publishedAt, author-> {name}, mainImage{asset ->{url}},
+    title, source, url, publishedAt, author-> {name}, categories[]-> {title}, mainImage{asset ->{url}},
   } | order(publishedAt desc) 
   `);
   console.log(data);

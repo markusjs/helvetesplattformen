@@ -6,6 +6,7 @@
     import TitleAndQuote from '$lib/TitleAndQuote.svelte'
     import Header from '$lib/Header.svelte'
 	import PostList from '$lib/PostList.svelte'
+
     // export let author;
     export let data;
 </script>
@@ -16,7 +17,7 @@
     <div class="content">
         <PostList posts={data.posts}></PostList>
         <div class="tips">
-            <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips om nyhetssak!</a>
+            <!-- <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips om nyhetssak!</a> -->
         </div>
     </div>
 </main>
