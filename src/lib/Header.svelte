@@ -14,7 +14,7 @@
     <Hamburger>
         <Menu/>
     </Hamburger> -->
-    <!-- <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips!</a> -->
+    <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips!</a>
     <!-- <button on:click={() => (showModal = true)}> show modal </button> -->
             
     <Modal bind:showModal>
