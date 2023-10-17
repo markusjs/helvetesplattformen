@@ -21,16 +21,9 @@
             {formattedDate}
         {/if}
         {#if post.categories}
-            {#if post.categories[0].title == "Pluss-sak"}
-                <div>
-                    {post.source}
-                    +
-                </div>
-            {:else}
                 <div>
                     {post.source}
                 </div>
-            {/if}
             {:else}
                 <div>
                     {post.source}
