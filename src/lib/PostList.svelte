@@ -45,8 +45,13 @@
     h2 {
         margin-top: 0;
     }
+    h3 {
+        flex: 1;
+    }
     a {
       text-decoration: none;
+      display: flex;
+      flex-direction: column;
     }
     .wrapper {
         display: flex;
