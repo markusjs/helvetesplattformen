@@ -20,9 +20,9 @@
                         <img src={post.mainImage.asset.url} alt="hovedbilde">
                     </div>
                 {/if}
-        
+
         <h3>{post.title}
-        
+
         </h3>
         {#if post.categories != null}
                 {#if post.categories[0].title == "Pluss-sak"}
@@ -79,7 +79,7 @@
                 margin-top: 16px;
             }
         }
-        position: relative; 
+        position: relative;
         .img-wrap {
             padding-top: 32px;
             display: flex;
@@ -92,7 +92,7 @@
         }
         img {
             height: auto;
-            border-radius: 7.5px 7.5px 0px 0px;           
+            border-radius: 7.5px 7.5px 0px 0px;
         }
         }
   </style>
