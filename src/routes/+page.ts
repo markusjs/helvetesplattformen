@@ -18,6 +18,7 @@ const client = createClient({
   apiVersion: "2021-10-21",
   useCdn: false
 });
+
 export async function load({ params }) {
   const data = await client.fetch(`*[_type == "artikkel"]{
     title, source, url, publishedAt, author-> {name}, categories[]-> {title}, mainImage{asset ->{url}},
@@ -35,7 +36,10 @@ export async function load({ params }) {
   };
 }
 
-
+export async function _createPost(post: Post) {
+  const result = client.create(post)
+  return result
+}
 // const data = await client.fetch(`*[_type == "artikkel"]
 // | order(publishedAt desc)
 // {title, "name": author->name}
