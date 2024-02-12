@@ -50,9 +50,9 @@ ${posts
 	.map(
 		(post) => `
 <item>
-	<guid>${post.url}</guid>
+	<guid>${post.url.replace(/&/g, '&amp;')}</guid>
 	<title>${post.title}</title>
-	<link>${post.url}</link>
+	<link>${post.url.replace(/&/g, '&amp;')}</link>
 	<description></description>
 	<pubDate>${new Date(post.publishedAt).toString()}</pubDate>
 </item>`

@@ -7,40 +7,16 @@
 </script>
 <header>
     <div class="title">
-        <h1>Helvetesplattformen</h1>
+        <a href="/">
+            <h1>Helvetesplattformen</h1>
+        </a>
         <p>En oversikt over skriverier om Helseplattformen.</p>
     </div>
-    <!-- <Menu/>
-    <Hamburger>
-        <Menu/>
-    </Hamburger> -->
-    <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips!</a>
-    <!-- <button on:click={() => (showModal = true)}> show modal </button> -->
-            
-    <Modal bind:showModal>
-        <h2 slot="header">
-            modal
-            <small><em>adjective</em> mod·al \ˈmō-dəl\</small>
-        </h2>
-    
-        <ol class="definition-list">
-            <li>of or relating to modality in logic</li>
-            <li>
-                containing provisions as to the mode of procedure or the manner of taking effect —used of a
-                contract or legacy
-            </li>
-            <li>of or relating to a musical mode</li>
-            <li>of or relating to structure as opposed to substance</li>
-            <li>
-                of, relating to, or constituting a grammatical form or category characteristically indicating
-                predication
-            </li>
-            <li>of or relating to a statistical mode</li>
-        </ol>
-        <label for="">Tittel</label>
-        <input type="text" id="title">
-        <button type="submit"></button>
-    </Modal>
+    <section class="links">
+        <a class="link" href="/om">Om siden</a>
+        <a class="link" href="/rss.xml">RSS-feed</a>
+        <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips!</a>
+    </section>
 </header>
 
 <style lang="scss">
@@ -93,5 +69,8 @@
     .link {
         text-decoration: underline;
         font-size: 1rem;
+    }
+    .links a{
+        margin-right: 24px;
     }
 </style>
