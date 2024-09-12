@@ -24,7 +24,6 @@ export async function load({ params }) {
     title, source, url, publishedAt, author-> {name}, categories[]-> {title}, mainImage{asset ->{url}},
   } | order(publishedAt desc) 
   `);
-  console.log(data);
   if (data) {
     return {
       posts: data,
@@ -36,10 +35,10 @@ export async function load({ params }) {
   };
 }
 
-export async function _createPost(post: Post) {
-  const result = client.create(post)
-  return result
-}
+// export async function _createPost(post: Post) {
+//   const result = client.create(post)
+//   return result
+// }
 // const data = await client.fetch(`*[_type == "artikkel"]
 // | order(publishedAt desc)
 // {title, "name": author->name}

@@ -15,11 +15,11 @@
         <a href={post.url} class="card">
             <!-- {post.categories} -->
             <PostDate {post}></PostDate>
-                {#if post.mainImage}
+                <!-- {#if post.mainImage}
                     <div class="img-wrap">
                         <img src={post.mainImage.asset.url} alt="hovedbilde">
                     </div>
-                {/if}
+                {/if} -->
 
         <h3>{post.title}
 
