@@ -40,21 +40,21 @@ const render = (
 <title>
 	<![CDATA[Helvetesplattformen]]>
 </title>
-	<description>
+<description>
 	<![CDATA[ En oversikt over skriverier om Helseplattformen. ]]>
 </description>
 <link>https://helvetesplattformen.no</link>
-<lastBuildDate>${new Date().toString()}</lastBuildDate>
+<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 <atom:link href="https://helvetesplattformen.no/rss.xml" rel="self" type="application/rss+xml" />
 ${posts
 	.map(
 		(post) => `
 <item>
-	<guid>${post.url.replace(/&/g, '&amp;')}</guid>
+	<guid>${post.url ? post.url.replace(/&/g, '&amp;') : ''}</guid>
 	<title>${post.title}</title>
-	<link>${post.url.replace(/&/g, '&amp;')}</link>
+	<link>${post.url ? post.url.replace(/&/g, '&amp;') : ''}</link>
 	<description></description>
-	<pubDate>${new Date(post.publishedAt).toString()}</pubDate>
+	<pubDate>${post.publishedAt ? new Date(post.publishedAt).toUTCString() : new Date().toUTCString()}</pubDate>
 </item>`
 	)
 	.join('')}
