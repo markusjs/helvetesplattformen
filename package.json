@@ -42,7 +42,8 @@
 		"svelte-check": "^3.8.6",
 		"tslib": "^2.8.1",
 		"typescript": "^5.9.3",
-		"vite": "^4.5.14"
+		"vite": "^4.5.14",
+		"@sveltejs/adapter-vercel": "^5.10.3"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -50,7 +51,6 @@
 	"dependencies": {
 		"@sanity/client": "^5.4.2",
 		"@sanity/image-url": "^1.2.0",
-		"@sveltejs/adapter-vercel": "^5.10.3",
 		"date-fns": "^2.30.0"
 	},
 	"packageManager": "pnpm@8.11.0+sha1.01bf39424f1008f29012bbae851d2acb8a20a0d0"
