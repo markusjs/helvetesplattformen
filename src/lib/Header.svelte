@@ -16,6 +16,7 @@
         <a class="link" href="/om">Om siden</a>
         <a class="link" href="/rss.xml">RSS-feed</a>
         <a class="link" href="https://forms.gle/DKZ5oPBJYyieRxHk9">Send inn tips!</a>
+        <a class="link" href="/donasjoner">Donasjoner</a>
     </section>
 </header>
 
