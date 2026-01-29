@@ -35,9 +35,4 @@
     .tips {
         margin: 24px 0;
     }
-    .tips a {
-        text-decoration: underline;
-        font-size: 1.5rem;
-        color: #003B49;
-    }
 </style>
